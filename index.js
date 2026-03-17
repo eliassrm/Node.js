@@ -1,12 +1,14 @@
 // This is the read file 
 const fs = require('fs');
+const path = require('path');
 
-fs.readFile('./files/start_here.txt', (err, data)=>{
+fs.readFile(path.join(__dirname, 'files', 'start_here.txt'),'utf8', (err, data)=>{
     if(err) throw err;
     console.log(data);
     console.log(data.toString());
 })
 
+console.log("This will be printed first?");
 //exit on uncaught exceptions
 process.on('uncaughtException', err =>{
     console.error('There was an uncaught error', err);

@@ -1,17 +1,23 @@
 const { format } = require('date-fns');
-
-console.log(format(new Date(), 'yyyy-MM-d\tHH:mm:ss'));
-
-const { v4: uuid } = require('uuid');
-console.log(uuid());
-
-console.log();
-
 const fs = require('fs');
 const fsPromises = require('fs').promises;
 const path = require('path');
+const { v4: uuid } = require('uuid');
+
+console.log(format(new Date(), 'yyyy-MM-d\tHH:mm:ss'));
+console.log(uuid());
+console.log();
+
 
 const logEvents = async (message) => {
     const dateTime = `${format(new Date(), 'yyyy-MM-d\tHH:mm:ss')}`;
-    
+    const logItem = `${dateTime}\t${uuid()}\t${message}\n`;
+    console.log(logItem);
+    try {
+        await fsPromises.appendFile(path.join(__dirname, 'logs','eventLog.txt'), logItem);  
+    } catch (err) {
+        console.log(err);
+    }
 }
+
+module.exports = logEvents;

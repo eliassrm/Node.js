@@ -14,6 +14,10 @@ const logEvents = async (message) => {
     const logItem = `${dateTime}\t${uuid()}\t${message}\n`;
     console.log(logItem);
     try {
+        if (!fs.existsSync(path.join(__dirname, 'logs'))){
+            await fsPromises.mkdir(path.join(__dirname, 'logs'));
+        }
+        //test write to file
         await fsPromises.appendFile(path.join(__dirname, 'logs','eventLog.txt'), logItem);  
     } catch (err) {
         console.log(err);

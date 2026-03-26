@@ -1,0 +1,5 @@
+2026-03-26	12:14:15	6bd38aa2-d306-450e-bd6f-d5b3c2c078d8	Log event emitted!
+2026-03-26	12:14:17	1fd9ded3-5cec-4dcb-a370-96f24d7b3875	Log event emitted after 2 seconds!
+2026-03-26	12:15:10	6fce3702-f633-4d98-a676-63eb8950c6f5	Log event emitted!
+2026-03-26	12:15:12	753f500e-eebe-43b8-87b9-d68eed7b85cc	Log event emitted after 2 seconds!
+2026-03-26	12:18:06	5a1e2934-a927-4ff4-9982-b7b6435162e3	Log event emitted after 2 seconds!

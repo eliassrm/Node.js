@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>⚡ Web Lab | Interactive Learning Playground</title>
+    <script src="../js/main.js"></script>
+    <link rel="stylesheet" href="../css/main.css" />
+</head>
+<body>
+
+<div class="lab-container">
+    <div class="lab-header">
+        <div class="title">
+            <h1>🧪 Web Playground · Experiment & Learn</h1>
+            <p>interactive sandbox | live preview | dynamic controls</p>
+        </div>
+        <div class="info-chip">
+            🎮 CSS + JS separated | pure HTML structure
+        </div>
+    </div>
+
+    <div class="experiment-grid">
+        <!-- LEFT SIDE: LIVE PREVIEW ZONE (dynamic content) -->
+        <div class="live-preview">
+            <div class="preview-header">
+                <span>✨ LIVE DEMO AREA</span>
+                <span style="font-size:0.7rem;">⬤ updates in real time</span>
+            </div>
+            <div class="preview-area" id="livePreviewContainer">
+                <!-- dynamic content will be injected/controlled by JS -->
+                <div class="dynamic-card" id="greetingCard">
+                    <strong>👋 Hello Explorer!</strong>
+                    <div style="margin-top: 8px;">Click the buttons & sliders → see magic ✨</div>
+                </div>
+                <div class="dynamic-card" id="colorDemo" style="transition: all 0.2s;">
+                    <div>🎨 <span id="colorLabel">Background</span> demo</div>
+                    <div style="height: 50px; border-radius: 1rem; margin-top: 8px; background: #cbdde9;" id="colorBlock"></div>
+                </div>
+                <div class="dynamic-card" id="counterCard">
+                    <div>🔢 Interactive Counter</div>
+                    <div class="counter-box" id="counterDisplay">0</div>
+                    <div class="flex-btns" style="margin-top: 8px;">
+                        <button id="incBtnLocal" class="secondary" style="flex:1;">+ Increment</button>
+                        <button id="resetBtnLocal" class="outline" style="flex:1;">⟳ Reset</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- RIGHT SIDE: ALL CONTROLS AND EXPERIMENTS -->
+        <div class="control-panels">
+            <!-- Panel 1: Color & Style Lab -->
+            <div class="panel">
+                <div class="panel-title">
+                    🎨 COLOR & STYLE LAB
+                </div>
+                <div class="panel-body">
+                    <div class="color-row">
+                        <label>🎭 Card BG:</label>
+                        <input type="color" id="cardBgColor" value="#f1f6fe">
+                    </div>
+                    <div class="color-row">
+                        <label>📦 Box color:</label>
+                        <input type="color" id="boxColor" value="#7b9fc7">
+                    </div>
+                    <div>
+                        <label>📏 Border Radius (px):</label>
+                        <input type="range" id="borderRadiusSlider" min="0" max="32" value="18" step="1">
+                        <span id="radiusValue" style="font-size:0.75rem; margin-left: 8px;">18px</span>
+                    </div>
+                    <button id="resetStyleBtn" class="outline">⟳ Reset Styles</button>
+                </div>
+            </div>
+
+            <!-- Panel 2: Message & Typing Simulator -->
+            <div class="panel">
+                <div class="panel-title">
+                    💬 MESSAGE MACHINE
+                </div>
+                <div class="panel-body">
+                    <input type="text" id="messageInput" placeholder="Type your message..." value="Learning HTML + CSS + JS">
+                    <div class="flex-btns">
+                        <button id="updateMsgBtn">📢 Update Preview</button>
+                        <button id="clearMsgBtn" class="outline">🗑️ Clear</button>
+                    </div>
+                    <div style="background:#f0f4fa; padding:0.5rem; border-radius:1rem; margin-top: 0.2rem;">
+                        <span>💡 current: </span>
+                        <strong id="messagePreview">Learning HTML + CSS + JS</strong>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Panel 3: Counter & Math Playground -->
+            <div class="panel">
+                <div class="panel-title">
+                    🧮 COUNTER & MATH FUN
+                </div>
+                <div class="panel-body">
+                    <div class="flex-btns">
+                        <button id="globalIncBtn">➕ +1</button>
+                        <button id="globalDecBtn">➖ -1</button>
+                        <button id="globalResetBtn">🔁 Reset 0</button>
+                    </div>
+                    <div>
+                        <label>⚡ Multiply by:</label>
+                        <select id="multiplierSelect">
+                            <option value="1">x1 (no change)</option>
+                            <option value="2">x2 (double)</option>
+                            <option value="3">x3 (triple)</option>
+                            <option value="5">x5 (boost)</option>
+                        </select>
+                        <button id="applyMultiplierBtn" style="margin-top: 8px; width:100%;">✨ Apply multiplier to counter</button>
+                    </div>
+                    <div class="note">
+                        🧠 Current counter value: <span id="globalCounterSpan" class="badge-value">0</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Panel 4: Random & JS Utilities -->
+            <div class="panel">
+                <div class="panel-title">
+                    🎲 RANDOM EXPERIMENTS
+                </div>
+                <div class="panel-body">
+                    <div class="flex-btns">
+                        <button id="randomColorBtn">🌈 Random Card Color</button>
+                        <button id="randomNumberBtn">🎲 Random Fact</button>
+                    </div>
+                    <div id="randomFactDisplay" style="background:#f5f9ff; border-radius: 1rem; padding: 0.6rem; font-size:0.85rem; text-align:center;">
+                        🎲 click a button → see magic
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        ⚡ Interactive learning environment — every control updates the live preview. Experiment with colors, counters, messages & JS logic!
+    </footer>
+</div>
+</body>
+</html>

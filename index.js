@@ -10,8 +10,8 @@ const myEmitter = new MyEmitter();
 // add listener for the log event
 myEmitter.on('log', (msg) => logEvents(msg));
 
-// emit event
-// myEmitter.emit('log', 'Log event emitted!');
+// // emit event
+// // myEmitter.emit('log', 'Log event emitted!');
 
 setTimeout(() => {
     myEmitter.emit('log', 'Log event emitted after 2 seconds!');

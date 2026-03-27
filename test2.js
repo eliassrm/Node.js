@@ -1,15 +1,9 @@
-function resolveAfter2Seconds(x) {
-  return new Promise(resolve => {
-    setTimeout(() => {
-      resolve(x);
-    }, 2000);
-  });
-}
+let soup = "chicken noodle soup";
+let reply;
+if (soup === "chicken noodle soup") {
+    reply = "That is my favorite soup!";
+} else {
+    reply = "I don't like that soup.";
+} 
+console.log(reply);
 
-async function f1() {
-  const x = await resolveAfter2Seconds(10); // Pauses for 2 seconds
-  console.log(x); // 10
-}
-
-f1();
-console.log("This runs immediately, before the '10' is logged.");

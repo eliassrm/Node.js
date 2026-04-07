@@ -48,6 +48,25 @@ const server = http.createServer((req, resp) => {
                     ? path.join(__dirname, "views", req.url)
                     : path.join(__dirname, req.url);
     
+    // If there is no extension and the url does not end with a slash, assume .html
+    if (!extension && req.url.slice(-1) !== "/") filePath += ".html";
+   
+    const fileExists = fs.existsSync(filePath);
+    if (fileExists){
+        // Serve the file
+        fs.readFile(filePath, (err, data) => {
+            if (err) {
+                console.log(err);
+                resp.statusCode = 500;
+                resp.end();
+            } else {
+                // 404 , 500, 301 redirects
+                resp.statusCode = 200;
+                resp.setHeader("Content-Type", contentType);
+                resp.end(data);
+            }});
+            
+    }
     
 });
 

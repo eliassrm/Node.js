@@ -1,3 +1,6 @@
+// video stopped at 2:39:00
+// last topic covered is middleware function
+
 const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 3500;

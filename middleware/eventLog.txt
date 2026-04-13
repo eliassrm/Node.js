@@ -1,2 +1,0 @@
-2026-04-13	12:04:53	82321c17-4b8d-4afc-99e7-37d0e4d0895d	GET	undefined	/
-2026-04-13	12:04:53	7b1873c4-b8ea-4ce2-b06a-3ab9ce1be979	GET	undefined	/.well-known/appspecific/com.chrome.devtools.json

@@ -18,7 +18,7 @@ const logEvents = async (message) => {
             await fsPromises.mkdir(path.join(__dirname,  'logs'));
         }
         //test write to file
-        await fsPromises.appendFile(path.join(__dirname,'eventLog.txt'), logItem);  
+        await fsPromises.appendFile(path.join(__dirname,'logs', 'eventLog.txt'), logItem);  
     } catch (err) {
         console.log(err);
     }
@@ -29,14 +29,14 @@ const logger = (req, res, next) => {
     console.log(`${req.method} ${req.url}`);
     next();
 }
-// func: remove old log files and start fresh on each server start
+// func: remove old log lines and start fresh on each server start
 const deleteLogs = async () => {
     try {
-        if (fs.existsSync(path.join(__dirname, '..', 'middleware', 'eventLog.txt'))) {
-            await fsPromises.unlink(path.join(__dirname, '..', 'middleware', 'eventLog.txt'));
-            console.log('Old log file deleted');
+        if (fs.existsSync(path.join(__dirname, 'logs', 'eventLog.txt'))) {
+            await fsPromises.writeFile(path.join(__dirname, 'logs', 'eventLog.txt'), '');
+            console.log('Old log lines deleted');
         } else {
-            console.log('No log file to delete');
+            console.log('No log lines to delete');
         }
     } catch (err) {
         console.log(err);

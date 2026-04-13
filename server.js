@@ -10,6 +10,7 @@ const { logger } = require('./middleware/logEvents');
 const { deleteLogs } = require('./middleware/logEvents');
 const fs = require('fs');
 const cors = require('cors');
+const errorHandler = require('./middleware/errorHandler');
 
 // Delete old log files on server start
 deleteLogs();

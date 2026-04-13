@@ -1,20 +1,31 @@
 // video stopped at 2:39:00
-// last topic covered is middleware function
+// last topic covered is 
+// middleware function
 
 const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 3500;
 const path = require('path');
 const { logger } = require('./middleware/logEvents');
+const { deleteLogs } = require('./middleware/logEvents');
 const fs = require('fs');
+const cors = require('cors');
+
+// Delete old log files on server start
+deleteLogs();
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}...`);
-
 });
 
 app.use(logger);
 
+// const corsOptions = {
+//     origin: 'http://localhost:3500', // Replace with your allowed origin
+//     optionsSuccessStatus: 200 // For legacy browser support
+// };
+
+// app.use(cors(corsOptions));
 
 // Middleware to log requests
 // in other words, a function that runs before the route handler

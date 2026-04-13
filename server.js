@@ -1,6 +1,7 @@
 // video stopped at 2:39:00
-// last topic covered is 
-// middleware function
+// video stopped at 2:58:37-13.04.2026
+// topic to begin is Routing
+
 
 const express = require('express');
 const app = express();

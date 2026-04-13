@@ -1,3 +1,0 @@
-2026-04-13	12:14:53	0389f7b5-c35d-4f92-9c49-1f627356f6ad	GET	undefined	/x
-2026-04-13	12:14:53	989d0d04-240d-4666-b8a5-ae318b0bd09a	GET	undefined	/js/main.js
-2026-04-13	12:14:53	c4cf9f7d-cd77-44ac-b0ce-272655668a9a	GET	undefined	/css/main.css
